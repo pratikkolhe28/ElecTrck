@@ -12,6 +12,8 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected successfully!'))
   .catch((err) => console.log('MongoDB connection error:', err))
 
+app.use('/api/auth', require('./routes/auth'))
+
 app.get('/', (req, res) => {
   res.json({ message: 'ElecTrack backend is running!' })
 })
