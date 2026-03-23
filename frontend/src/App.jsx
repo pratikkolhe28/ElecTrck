@@ -1,20 +1,21 @@
-import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Parties from './pages/Parties'
+import Elections from './pages/Elections'
+import Promises from './pages/Promises'
 
 function App() {
-  const [message, setMessage] = useState('Connecting...')
-
-  useEffect(() => {
-    fetch('http://localhost:5000')
-      .then(res => res.json())
-      .then(data => setMessage(data.message))
-      .catch(() => setMessage('Backend not connected'))
-  }, [])
-
   return (
-    <div style={{ textAlign: 'center', marginTop: '100px' }}>
-      <h1>ElecTrack</h1>
-      <p>{message}</p>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/parties" element={<Parties />} />
+        <Route path="/elections" element={<Elections />} />
+        <Route path="/promises" element={<Promises />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
