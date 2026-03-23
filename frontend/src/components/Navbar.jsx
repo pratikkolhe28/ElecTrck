@@ -18,6 +18,11 @@ function Navbar() {
         <Link to="/parties" style={{ color: 'white', textDecoration: 'none' }}>Parties</Link>
         <Link to="/elections" style={{ color: 'white', textDecoration: 'none' }}>Elections</Link>
         <Link to="/promises" style={{ color: 'white', textDecoration: 'none' }}>Promises</Link>
+        {user && user.role === 'citizen' && (
+        <Link to="/vote" style={{ color: 'white', textDecoration: 'none' }}>Vote</Link>
+        )}
+        <Link to="/results" style={{ color: 'white', textDecoration: 'none' }}>Results</Link>
+        
         {user ? (
           <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
             <span style={{ color: '#a8a8b3', fontSize: '14px' }}>

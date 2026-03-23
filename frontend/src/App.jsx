@@ -8,6 +8,8 @@ import Promises from './pages/Promises'
 import Login from './pages/Login'
 import RegisterCitizen from './pages/RegisterCitizen'
 import RegisterParty from './pages/RegisterParty'
+import Vote from './pages/Vote'
+import Results from './pages/Results'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register/citizen" element={<RegisterCitizen />} />
           <Route path="/register/party" element={<RegisterParty />} />
+          <Route path="/vote" element={<Vote />} />
+          <Route path="/results" element={<Results />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

@@ -41,6 +41,17 @@ const seedDB = async () => {
     })
     console.log('Admin created successfully!')
     }
+
+    const Party = require('./models/Party')
+
+    await Party.deleteMany({})
+    await Party.insertMany([
+    { name: 'Bharatiya Janata Party', shortName: 'BJP', ideology: 'National Conservatism', foundedYear: 1980, color: '#FF9933', isApproved: true },
+    { name: 'Indian National Congress', shortName: 'INC', ideology: 'Social Democracy', foundedYear: 1885, color: '#00BFFF', isApproved: true },
+    { name: 'Aam Aadmi Party', shortName: 'AAP', ideology: 'Anti-corruption', foundedYear: 2012, color: '#00BFAF', isApproved: true },
+    { name: 'Shiv Sena', shortName: 'SS', ideology: 'Hindu Nationalism', foundedYear: 1966, color: '#FF6600', isApproved: true },
+    ])
+    console.log('Parties seeded!')
     mongoose.connection.close()
 
   } catch (err) {
