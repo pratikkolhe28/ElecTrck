@@ -13,8 +13,6 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.log('MongoDB connection error:', err))
 
 app.use('/api/auth', require('./routes/auth'))
-
-app.use('/api/auth', require('./routes/auth'))
 app.use('/api/vote', require('./routes/vote'))
 
 app.get('/', (req, res) => {
